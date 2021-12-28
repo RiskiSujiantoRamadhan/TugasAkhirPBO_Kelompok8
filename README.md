@@ -25,7 +25,10 @@ Franz Kenzo
 - KoperasiSimpanPinjamController.java
 
 Class Diagram
+
 ![Class Diagram](https://user-images.githubusercontent.com/78955667/147523538-bbd75640-a139-4adc-8320-76dab2750496.jpeg)
 
+
 ER Diagram
+
 ![ERD PBO](https://user-images.githubusercontent.com/78955667/147523560-28396048-028c-433d-8fe0-0d39cc9a3363.png)
