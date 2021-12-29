@@ -22,7 +22,7 @@ public class KoperasiSimpanPinjam extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Koperasi.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("KoperasiSimpanPinjam.fxml"));
         
         Scene scene = new Scene(root);
         stage.setTitle("KOPERASI");
@@ -35,20 +35,5 @@ public class KoperasiSimpanPinjam extends Application {
      */
     public static void main(String[] args) {
           launch(args);
-//        try {
-//            DataModel satu=new DataModel("MYSQL");
-//            Rekening Yogi = new Rekening(17865, 12341000.);
-//            Rekening udin = new Rekening(67576, 234234234.);
-//            Individu u = new Individu("YOGI ANDARU", "KOTA METRO",34212319912123L, 223123428399123L, Yogi);
-//            Perusahaan z = new Perusahaan("rgdfgdrgdfgd", "sefsdfsef","sefsdfsefsdfse", udin);
-//            satu.addNasabah(u);
-//            satu.addNasabah(z);
-//            System.out.println("MASOK GAN");
-//            
-//            
-//        } catch (SQLException ex) {
-//            System.out.println("YAH COK GAGAL MASOK");
-//            Logger.getLogger(KoperasiSimpanPinjam.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }
 }
