@@ -25,9 +25,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
  *
  * @author YOGIE
  */
-public class KoperasiController implements Initializable {
+public class KoperasiSimpanPinjamController implements Initializable {
     
-
     @FXML
     private TextField tfpNRekeningID;
 
@@ -211,7 +210,7 @@ public class KoperasiController implements Initializable {
             btnpRefresh.fire();
         } catch (SQLException ex) {
             LiCek.setText("AKUN GAGAL TERDAFTARKAN");
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -232,24 +231,21 @@ public class KoperasiController implements Initializable {
         tbliKoperasi2.setItems(null);
         tbliKoperasi2.setItems(data2);
         btniTambahRek.setDisable(true);
-
     }
 
     @FXML
     void ihandleClear(ActionEvent event) {
-    try {
-        tfiRekeningID.setText("" + dm.nextRekeningID());
-        tfiNorek.setText(tfiRekeningID.getText() + "01");
-        tfiNama.setText("");
-        tfiAlamat.setText("");
-        tfiNik.setText("");
-        tfiNpwp.setText("");
-        tfiSaldo.setText("");
-
-    } catch (SQLException ex) {
-        Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
-    }
-
+        try {
+            tfiRekeningID.setText("" + dm.nextRekeningID());
+            tfiNorek.setText(tfiRekeningID.getText() + "01");
+            tfiNama.setText("");
+            tfiAlamat.setText("");
+            tfiNik.setText("");
+            tfiNpwp.setText("");
+            tfiSaldo.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -266,9 +262,8 @@ public class KoperasiController implements Initializable {
             tfpSaldo.setText("");
             
         } catch (SQLException ex) {
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
 
     @FXML
@@ -280,9 +275,8 @@ public class KoperasiController implements Initializable {
             btniRefresh.fire();
             tfpSaldo.setText("");        
         } catch (SQLException ex) {
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     @FXML
@@ -294,9 +288,8 @@ public class KoperasiController implements Initializable {
             btniRefresh.fire();
             tfpSaldo.setText("");
         } catch (SQLException ex) {
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     @FXML
@@ -313,9 +306,8 @@ public class KoperasiController implements Initializable {
             btnpRefresh.fire();
         } catch (SQLException ex) {
             LpCek.setText("AKUN GAGAL TERDAFTARKAN");
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     @FXML
@@ -334,24 +326,20 @@ public class KoperasiController implements Initializable {
         tblpkoperasi2.setItems(null);
         tblpkoperasi2.setItems(data3);
         btnpTambahRek.setDisable(true);
-
     }
 
     @FXML
     void phandlebtnClear(ActionEvent event) {
-    try {
-        tfpRekeningID.setText("" + dm.nextRekeningID());
-        tfpNorek.setText(tfpRekeningID.getText() + "01");
-        tfpNama.setText("");
-        tfpAlamat.setText("");
-        tfpNib.setText("");
-        tfpSaldo.setText("");
-
-    } catch (SQLException ex) {
-        Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
-    }
-        
-
+        try {
+            tfpRekeningID.setText("" + dm.nextRekeningID());
+            tfpNorek.setText(tfpRekeningID.getText() + "01");
+            tfpNama.setText("");
+            tfpAlamat.setText("");
+            tfpNib.setText("");
+            tfpSaldo.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
@@ -368,9 +356,8 @@ public class KoperasiController implements Initializable {
             tfpSaldo.setText("");
             
         } catch (SQLException ex) {
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     @FXML
@@ -382,9 +369,8 @@ public class KoperasiController implements Initializable {
             btniRefresh.fire();
             tfpSaldo.setText("");        
         } catch (SQLException ex) {
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     @FXML
@@ -396,17 +382,14 @@ public class KoperasiController implements Initializable {
             btniRefresh.fire();
             tfpSaldo.setText("");        
         } catch (SQLException ex) {
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
-
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            dm = new DataModel("SQLITE");
+            dm = new DataModel("MYSQL");
             LBStatus.setText(dm.conn == null ? "Connection lost" : "Connected");
             btniClear.fire();
             btniRefresh.fire();
@@ -416,9 +399,9 @@ public class KoperasiController implements Initializable {
             tfiNorek.setText(tfiRekeningID.getText()+"01");
             tfpRekeningID.setText(""+dm.nextRekeningID());
             tfpNorek.setText(tfiRekeningID.getText()+"01");
-            // TODO
+            
         } catch (SQLException ex) {
-            Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
         }
         tbliKoperasi.getSelectionModel().selectedIndexProperty().addListener(listener->{
             if (tbliKoperasi.getSelectionModel().getSelectedItem()!=null){
@@ -429,7 +412,7 @@ public class KoperasiController implements Initializable {
                 try {
                     tfiNNorek.setText(""+dm.nextRekeningNumber(rek.getRekeningid()));
                 } catch (SQLException ex) {
-                    Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -442,11 +425,12 @@ public class KoperasiController implements Initializable {
                 try {
                     tfpNNorek.setText(""+dm.nextRekeningNumber(rek.getRekeningid()));
                 } catch (SQLException ex) {
-                    Logger.getLogger(KoperasiController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(KoperasiSimpanPinjamController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
     }    
+    
     public void IviewDataRekening(int RekeningID){
         ObservableList<Rekening> data = dm.getRekenings(RekeningID);
         ciNorek.setCellValueFactory(new PropertyValueFactory<>("noRekening"));
@@ -458,6 +442,7 @@ public class KoperasiController implements Initializable {
 //        tblpkoperasi2.setItems(null);
 //        tblpkoperasi2.setItems(data);
     }
+    
     public void PviewDataRekening(int RekeningID){
         ObservableList<Rekening> data = dm.getRekenings(RekeningID);
 //        ciNorek.setCellValueFactory(new PropertyValueFactory<>("noRekening"));
@@ -468,6 +453,5 @@ public class KoperasiController implements Initializable {
         cpSaldo.setCellValueFactory(new PropertyValueFactory<>("saldo"));
         tblpkoperasi2.setItems(null);
         tblpkoperasi2.setItems(data);
-    }
-    
+    }   
 }
