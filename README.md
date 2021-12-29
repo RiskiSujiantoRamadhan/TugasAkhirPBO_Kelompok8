@@ -34,4 +34,5 @@ ER Diagram
 ![ERD PBO](https://user-images.githubusercontent.com/78955667/147523560-28396048-028c-433d-8fe0-0d39cc9a3363.png)
 
 Deskripsi Program :
+
 Program Koperasi Simpan Pinjam ini dapat digunakan untuk pendaftaran rekening, penambahan rekening, melakukan transaksi tarik tunai dan tambah saldo berdasarkan penyimpanan data akun yang tersimpan di database, dimana terdapat 2 jenis akun yaitu akun individu dan perusahaan dengan setiap pemegang akun dapat memiliki 1 akun atau lebih.
