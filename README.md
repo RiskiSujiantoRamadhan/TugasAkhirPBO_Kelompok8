@@ -6,6 +6,7 @@ Anggota Kelompok:
 * Franz Kenzo             (2057051015)
 
 Pembagian Tugas
+
 Riski Sujianto Ramadhan
 - KoperasiSimpanPinjam.fxml
 - Nasabah.java
